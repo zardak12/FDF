@@ -43,7 +43,7 @@ t_fdf		**mem(char *file_name)
 
 	if ((fd = open(file_name, O_RDONLY, 0)) <= 0)
 		error("file does not exist\n");
-	if (!(get_next_line(fd, &line)))
+	if (!(get_next_line(fd, &line) == 1))
 		error("Error\n");
 	x = ft_wdcounter(line, ' ');
 	y = 0;

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: kosgrey <kosgrey@student.21-school.ru>     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/08/08 17:43:04 by kosgrey           #+#    #+#              #
+#    Updated: 2020/08/08 17:43:17 by kosgrey          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME=fdf
 FRAEMWORKS=-framework OpenGL -framework AppKit
 FLAGS=-Werror -Wextra -Wall

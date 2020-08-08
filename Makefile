@@ -18,12 +18,10 @@ ALL_COMPILE = additional.c \
 
 all:
 	@make -C libft/ all
-	@make -C minilibx_macos/ all
 	gcc $(ALL_COMPILE) -o $(NAME) $(FLAGS) $(LIBFT) $(MANLIB) $(FRAEMWORKS)
 
 clean:
 	@make -C libft/ clean
-	@make -C minilibx_macos/ clean
 
 fclean: clean
 	/bin/rm -f $(NAME)

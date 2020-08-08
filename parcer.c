@@ -6,7 +6,7 @@
 /*   By: kosgrey <kosgrey@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 22:19:35 by kosgrey           #+#    #+#             */
-/*   Updated: 2020/08/07 23:49:16 by kosgrey          ###   ########.fr       */
+/*   Updated: 2020/08/08 16:22:18 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ t_fdf		**mem(char *file_name)
 
 	if ((fd = open(file_name, O_RDONLY, 0)) <= 0)
 		error("file does not exist\n");
-	get_next_line(fd, &line);
+	if (get_next_line(fd, &line) == -1)
+		error("Error\n");
 	x = ft_wdcounter(line, ' ');
 	y = 0;
 	free(line);
@@ -52,9 +53,11 @@ t_fdf		**mem(char *file_name)
 		y++;
 		free(line);
 	}
-	new = (t_fdf **)malloc(sizeof(t_fdf *) * (++y + 1));
+	if (!(new = (t_fdf **)malloc(sizeof(t_fdf *) * (++y + 1))))
+		return (NULL);
 	while (y > 0)
-		new[--y] = (t_fdf *)malloc(sizeof(t_fdf) * (x + 1));
+		if (!(new[--y] = (t_fdf *)malloc(sizeof(t_fdf) * (x + 1))))
+			return (NULL);
 	close(fd);
 	return (new);
 }

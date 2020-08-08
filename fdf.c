@@ -17,7 +17,7 @@ int		main(int argc, char **argv)
 	t_fdf		**massiv;
 
 	if (argc != 2)
-		error("ERROR\n");
+		error("Error\n");
 	massiv = parser(*++argv);
 	set_default(&START);
 	draw(massiv);

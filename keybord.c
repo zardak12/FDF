@@ -6,7 +6,7 @@
 /*   By: kosgrey <kosgrey@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 22:20:32 by kosgrey           #+#    #+#             */
-/*   Updated: 2020/08/07 23:10:43 by kosgrey          ###   ########.fr       */
+/*   Updated: 2020/08/08 16:20:06 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int		check_key(int key)
 void	execute_key(int key, t_fdf **massiv)
 {
 	if (key == UP)
-		START.shift_y += 10;
-	if (key == DOWN)
 		START.shift_y -= 10;
+	if (key == DOWN)
+		START.shift_y += 10;
 	if (key == RIGHT)
-		START.shift_x -= 10;
-	if (key == LEFT)
 		START.shift_x += 10;
+	if (key == LEFT)
+		START.shift_x -= 10;
 	if (key == 49 || key == 87 || key == 23)
 		START.threed = (START.threed) ? 0 : 1;
 	if (key == PLUS || key == 69)
